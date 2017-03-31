@@ -1,0 +1,12 @@
+<table>
+    <tr><th>Name</th><th>Priority</th></tr>
+    {% for s in students %}
+    <tr><td>{{s.text}}</td><td>{{s.priority}}</td></tr>
+    {% endfor %}
+</table>
+
+<ul>
+    {% for s in students %}
+    <li>{{s.text}}</li>
+    {% endfor %}
+</ul>
