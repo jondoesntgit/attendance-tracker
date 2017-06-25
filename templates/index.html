@@ -2,7 +2,7 @@
 <html>
 <head>
  	<meta charset="UTF-8"> 
-	<link rel="stylesheet" href="{{root}}/css/semantic.css">
+	<link rel="stylesheet" href="{{root}}/css/semantic.min.css">
 	<script src="{{root}}/js/jquery.min.js"></script>
 	<script src="{{root}}/js/semantic.min.js"></script>
 	<script src="{{root}}/js/turbolinks.min.js"></script>
@@ -36,6 +36,9 @@
   <div class="pusher">
     <div id="hey">
 	You are viewing {{page}}
+
+    {% include  '' ~ page ~ '.html' %}
+
 	</div>
   </div>
 </div>
