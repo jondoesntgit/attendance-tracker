@@ -30,9 +30,11 @@ switch($arg1){
     case "uploads":
 		$page = 'upload';
 		break;
-	case "classes":
+	case "courses":
+	case "course":
 	case "class":
-		$page = 'classes';
+	case "classes":
+		$page = 'courses';
 		break;
     case "users":
     case "user":

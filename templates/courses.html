@@ -1,0 +1,33 @@
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+       <table id='courses-table' class="table">
+       <thead>
+        <tr>
+          <th>Acronym</th><th>Name</th><th>Begin Date</th><th>End Date</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+       </table>
+      </div>
+
+<script>
+
+$('#courses-table tbody tr').remove();
+
+$.get('api/v1/courses', function(courses) { 
+  courses.forEach(function(course) {
+    $('#courses-table tr:last').after(
+        '<tr><td>' + course.acronym + '</td>' + 
+        '<td>' + course.name+ '</td>' +
+        '<td>' + course.begin_date + '</td>' + 
+        '<td>' + course.end_date + '</td>'
+      );
+  });
+});
+</script>
