@@ -1,0 +1,40 @@
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+       <table id='student-table' class="table">
+       <thead>
+        <tr>
+          <th>ID</th><th>First name</th><th>Last name</th><th>Email</th><th>Role</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+       </table>
+      </div>
+
+<script>
+
+roles = {
+  1: 'student',
+  2: 'instructor',
+  3: 'uploader'
+};
+
+$('#student-table tbody tr').remove();
+
+$.get('api/v1/users', function(users) { 
+  users.forEach(function(user) {
+    $('#student-table tr:last').after(
+        '<tr><td>' + user.id + '</td>' + 
+        '<td>' + user.first_name + '</td>' +
+        '<td>' + user.last_name + '</td>' + 
+        '<td>' + user.email + '</td>' +
+        '<td>' + roles[user.role] + '</td>'
+      );
+  });
+});
+</script>
